@@ -1,0 +1,41 @@
+<div class="card border-success mb-3" style="max-width: 80rem;">
+    <div class="card-header bg-transparent border-success text-success">
+        <a href="add/" class="btn btn-success btn-sm" title="Add a book">
+            <i class="fa fa-plus"></i>
+        </a>
+        Books
+    </div>
+        <div class="card-body text-success">
+        <h5 class="card-title"><i class="fas fa-book"></i> Book listing</h5>
+            <table class="table table-bordered table-inverse table-responsive">
+                <thead class="thead-inverse|thead-default text-success">
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Price</th>
+                        <th colspan="2">Options</th>
+                    </tr>
+                    </thead>
+                    <tbody class="text-secondary">
+                        {% for i in data %}
+                        <tr>
+                            <td scope="row">{{forloop.counter}}</td>
+                            <td>{{i.title}}</td>
+                            <td>{{i.author}}</td>
+                            <td>{{i.price}}</td>
+                            <td>
+                                <a href="edit/{{i.id}}" class="btn btn-info btn-sm" title="Edit a book">
+                                    <i class="fas fa-edit text-white"></i>
+                                </a>
+                                <a href="delete/{{i.id}}" class="btn btn-danger btn-sm btnDelete" title="Delete a book">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+            </table>
+        </div>
+    <div class="card-footer bg-transparent border-success text-success">Footer</div>
+</div>     

@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+{% block title %}
+Django Book Form Add
+{% endblock title %}
+{% block content %}
+<div class="card border-success mb-3" style="max-width: 80rem;">
+  <div class="card-header bg-transparent border-success text-success">
+      <a href="/" class="btn btn-success btn-sm" title="back to list">
+          <i class="fa fa-backspace"></i>
+      </a>
+      Back to list
+  </div>
+  <div class="card-body text-success">
+    <h5 class="card-title"><i class="fas fa-book"></i> Book form</h5>
+    <form action="/create/" method="post">
+       {% csrf_token %}
+        <div class="mb-3 text-secondary">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" class="form-control text-secondary" 
+          id="title" name="title" 
+          placeholder="Title"
+          autofocus required>
+        </div>
+        <div class="mb-3 text-secondary">
+          <label for="author" class="form-label">Author</label>
+          <input type="text" class="form-control text-secondary"
+          id="author" name="author"
+          placeholder="Author"
+          required>
+        </div>
+        <div class="mb-3 text-secondary">
+          <label for="price" class="form-label">Price</label>
+          <input type="text" class="form-control text-secondary"
+          id="price" name="price"
+          placeholder="10.00"
+          required>
+        </div>
+        <button type="submit" class="btn btn-success">
+            <i class="fas fa-save"></i>
+          Add
+        </button>
+    </form>
+  </div>
+  <div class="card-footer bg-transparent border-success text-success">Footer</div>
+</div>     
+
+{% endblock content %}
